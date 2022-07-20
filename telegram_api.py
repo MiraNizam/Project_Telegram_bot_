@@ -1,16 +1,17 @@
-from telegram import Update
-from telegram.ext import ApplicationBuilder  # A tool to create and configure an application (telegram bot)
-from telegram.ext import MessageHandler  # Handler - create acts(func) for activities
 import nest_asyncio
+from telegram import Update  # new information from server
+from telegram.ext import ApplicationBuilder  # to create and configure an application (telegram bot)
+from telegram.ext import MessageHandler  # Handler - create acts(func) for activities
 from telegram.ext import filters
-from ChatBot import bot
+
+from chat_bot import bot
 
 # Update - information received from the server (new messages, new contacts)
 # Updates come regularly from the server with new information
 # Function for MessageHandler, call it on every message to the bot
 nest_asyncio.apply()
 
-
+# func for MessageHandler, call on every message
 async def reply(update: Update) -> None:
     question = update.message.text
     reply = bot(question)
@@ -23,7 +24,7 @@ async def reply(update: Update) -> None:
 TOKEN = ""  # at BotFather add TOKEN
 app = ApplicationBuilder().token(TOKEN).build()
 
-# Create handle for text messages
+# Create text message handler
 handler = MessageHandler(filters.Text(), reply)
 # Add handler to App
 app.add_handler(handler)
