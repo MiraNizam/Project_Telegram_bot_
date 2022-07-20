@@ -1,0 +1,3 @@
+nltk  => 3.7
+sklearn => 1.1.1
+telegram => 20.0a1

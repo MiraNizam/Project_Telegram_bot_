@@ -1,10 +1,10 @@
 # tg_chat_bot
 
-##Description
+## Description
 
 This telegram bot can chat with you. When you run the bot, you can start a conversation by sending a text message, the bot is ready to answer you.
 
-##Running
+## Running
 1. Clone the repository:
 ```commandline
 git clone https://github.com/MiraNizam/tg_chat_bot.git
